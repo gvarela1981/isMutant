@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  nginx_app:
+    image: nginx:latest
+    depends_on:
+      - app
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8090:80
+    networks:
+      - my_project_network
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - my_project_network
+
+networks:
+  my_project_network:
