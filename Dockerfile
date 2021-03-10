@@ -8,6 +8,6 @@ COPY app/requirements.txt ./
 
 RUN pip3 install -r requirements.txt
 
-COPY app/src/. .
+COPY app/. .
 
-CMD [ "python3", "./index.py"]
+CMD [ "python3", "main.py"]

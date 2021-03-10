@@ -16,6 +16,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    # volumes:
+    #   - ./app/app:/my_project
     networks:
       - my_project_network
 
